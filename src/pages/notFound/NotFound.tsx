@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styles from './NotFound.module.css'
-import Button from "../components/Button.tsx";
+import Button from "../../components/button/Button.tsx";
 
 const NotFound: React.FC = () => {
     return (

@@ -1,8 +1,8 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './styles/App.css'
-import Home from "./pages/Home.tsx";
-import MainLayout from "./layouts/MainLayout.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Home from "./pages/home/Home.tsx";
+import MainLayout from "./layouts/mainLayout/MainLayout.tsx";
+import NotFound from "./pages/notFound/NotFound.tsx";
 
 function App() {
     return (

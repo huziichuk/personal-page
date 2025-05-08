@@ -10,11 +10,12 @@
 
 .primary {
     background-color: var(--color-button-primary);
-    color: var(--color-button-secondary);
+    color: black;
 }
 
 .primary:hover {
-    background-color: var(--color-button-secondary);
+    background-color: var(--color-button-primary-hover);
+    border-color: var(--color-button-primary-hover);
     color: var(--color-button-primary);
 }
 
@@ -24,7 +25,6 @@
 }
 
 .secondary:hover {
-    background-color: var(--color-button-primary);
-    color: var(--color-button-secondary);
+    background-color: var(--color-button-secondary-hover);
 }
 

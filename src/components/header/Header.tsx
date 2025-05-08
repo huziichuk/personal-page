@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import styles from "./Header.module.css";
+import ThemeToggle from "../themeToggle/ThemeToggle.tsx";
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header: React.FC = () => {
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logo}>
-                    <Link to="/" onClick={closeMenu}>Huziichuk Nazar</Link>
+                    <Link to="/" onClick={closeMenu}>Nazar Huziichuk</Link>
                 </div>
 
                 <button
@@ -31,6 +32,7 @@ const Header: React.FC = () => {
                     <li><Link className={styles.link} to="/experience" onClick={closeMenu}>Experience</Link></li>
                     <li><Link className={styles.link} to="/projects" onClick={closeMenu}>Projects</Link></li>
                     <li><Link className={styles.link} to="/contact" onClick={closeMenu}>Contact</Link></li>
+                    <li><ThemeToggle/></li>
                 </ul>
             </nav>
         </header>

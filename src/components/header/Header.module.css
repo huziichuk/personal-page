@@ -14,6 +14,11 @@
     display: flex;
     gap: 20px;
     font-size: var(--font-xl);
+    background-color: var(--bg-color);
+}
+
+.logo{
+    margin-right: 20px;
 }
 
 .link:hover {
@@ -41,7 +46,7 @@
     position: absolute;
     width: 33px;
     height: 3px;
-    background: black;
+    background: var(--bg-color-invert);
     border-radius: 2px;
 }
 
@@ -74,6 +79,12 @@
     top: 14px;
 }
 
+@media (max-width: 1010px) {
+    .nav{
+        width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
     .burger {
         display: flex;
@@ -84,7 +95,7 @@
         top: -100vh;
         left: 0;
         width: 100%;
-        background: white;
+        background: var(--bg-color);
         flex-direction: column;
         gap: 2rem;
         text-align: center;
