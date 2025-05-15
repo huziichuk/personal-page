@@ -18,8 +18,14 @@ const ToggleTheme:React.FC = () => {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+        const newTheme = localStorage.getItem("theme") === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        // Важно! Сообщаем всем компонентам о смене темы
+        window.dispatchEvent(new Event("theme-change"));
+        setTheme(newTheme)
     };
+
 
     return (
             <button className={styles.button} onClick={toggleTheme}>

@@ -27,11 +27,11 @@ const Header: React.FC = () => {
                 </button>
 
                 <ul className={`${styles.links} ${isOpen ? styles.linksOpen : ""}`}>
-                    <li><Link className={styles.link} to="/" onClick={closeMenu}>Home</Link></li>
-                    <li><Link className={styles.link} to="/about" onClick={closeMenu}>About</Link></li>
-                    <li><Link className={styles.link} to="/experience" onClick={closeMenu}>Experience</Link></li>
-                    <li><Link className={styles.link} to="/projects" onClick={closeMenu}>Projects</Link></li>
-                    <li><Link className={styles.link} to="/contact" onClick={closeMenu}>Contact</Link></li>
+                    <li><Link className={`${styles.link} underline_on_hover`} to="/" onClick={closeMenu}>Home</Link></li>
+                    <li><Link className={`${styles.link} underline_on_hover`} to="/about" onClick={closeMenu}>About</Link></li>
+                    <li><Link className={`${styles.link} underline_on_hover`} to="/skills" onClick={closeMenu}>Skills</Link></li>
+                    <li><Link className={`${styles.link} underline_on_hover`} to="/projects" onClick={closeMenu}>Projects</Link></li>
+                    <li><Link className={`${styles.link} underline_on_hover`} to="/contact" onClick={closeMenu}>Contact</Link></li>
                     <li><ThemeToggle/></li>
                 </ul>
             </nav>

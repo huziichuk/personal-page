@@ -8,3 +8,9 @@ body{
   color: var(--color-text-primary);
 }
 
+.underline_on_hover:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: .3em;
+  text-underline-color: rgba(0, 0, 0, 0.7);
+}

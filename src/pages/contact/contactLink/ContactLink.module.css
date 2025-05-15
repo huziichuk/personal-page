@@ -1,0 +1,16 @@
+.item{
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.img{
+    width: 24px;
+    height: 24px;
+}
+
+@media  screen and (max-width: 600px) {
+    .item{
+        justify-content: center;
+    }
+}
