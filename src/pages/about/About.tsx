@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../contact/Contact.module.css";
+import styles from "./About.module.css";
 import ThemedImage from "../../components/themedImage/ThemedImage.tsx";
 import educationLightIcon from '../../assets/education-light-icon.svg'
 import educationDarkIcon from '../../assets/education-dark-icon.svg'
