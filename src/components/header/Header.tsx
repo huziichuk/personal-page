@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import styles from "./Header.module.css";
 import ThemeToggle from "../themeToggle/ThemeToggle.tsx";
@@ -8,7 +8,14 @@ const Header: React.FC = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const closeMenu = () => setIsOpen(false);
-
+    useEffect(() => {
+        if (isOpen) {
+            window.scrollTo(0, 0);
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [isOpen]);
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
