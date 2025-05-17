@@ -5,6 +5,7 @@ import MainLayout from "./layouts/mainLayout/MainLayout.tsx";
 import NotFound from "./pages/notFound/NotFound.tsx";
 import Contact from "./pages/contact/Contact.tsx";
 import Skills from "./pages/skills/Skills.tsx";
+import About from "./pages/about/About.tsx";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainLayout />}>
                         <Route index element={<Home />} />
+                        <Route path="/about" element={<About/>}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/skills" element={<Skills/>}/>
                         <Route path="*" element={<NotFound/>}/>
