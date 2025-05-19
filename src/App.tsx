@@ -6,17 +6,19 @@ import NotFound from "./pages/notFound/NotFound.tsx";
 import Contact from "./pages/contact/Contact.tsx";
 import Skills from "./pages/skills/Skills.tsx";
 import About from "./pages/about/About.tsx";
+import Projects from "./pages/projects/Projects.tsx";
 
 function App() {
     return (
         <>
             <Router>
                 <Routes>
-                    <Route path="/" element={<MainLayout />}>
-                        <Route index element={<Home />} />
+                    <Route path="/" element={<MainLayout/>}>
+                        <Route index element={<Home/>}/>
                         <Route path="/about" element={<About/>}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/skills" element={<Skills/>}/>
+                        <Route path="/projects" element={<Projects/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Route>
                 </Routes>
