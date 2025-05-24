@@ -7,21 +7,38 @@ import Contact from "./pages/contact/Contact.tsx";
 import Skills from "./pages/skills/Skills.tsx";
 import About from "./pages/about/About.tsx";
 import Projects from "./pages/projects/Projects.tsx";
+import {lazy, Suspense} from "react";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute.tsx";
+
+const AdminLayout = lazy(() => import("./layouts/adminLayout/AdminLayout"));
+const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"))
+const Login = lazy(() => import("./pages/login/Login"));
 
 function App() {
     return (
         <>
             <Router>
-                <Routes>
-                    <Route path="/" element={<MainLayout/>}>
-                        <Route index element={<Home/>}/>
-                        <Route path="/about" element={<About/>}/>
-                        <Route path="/contact" element={<Contact/>}/>
-                        <Route path="/skills" element={<Skills/>}/>
-                        <Route path="/projects" element={<Projects/>}/>
-                        <Route path="*" element={<NotFound/>}/>
-                    </Route>
-                </Routes>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes>
+                        <Route path="/" element={<MainLayout/>}>
+                            <Route index element={<Home/>}/>
+                            <Route path="about" element={<About/>}/>
+                            <Route path="contact" element={<Contact/>}/>
+                            <Route path="skills" element={<Skills/>}/>
+                            <Route path="projects" element={<Projects/>}/>
+                            <Route path="*" element={<NotFound/>}/>
+                        </Route>
+
+                        <Route path="/admin" element={<AdminLayout/>}>
+                            <Route index element={
+                                <ProtectedRoute>
+                                    <Dashboard/>
+                                </ProtectedRoute>
+                            }/>
+                            <Route path="login" element={<Login/>}/>
+                        </Route>
+                    </Routes>
+                </Suspense>
             </Router>
         </>
     )
