@@ -1,0 +1,20 @@
+
+
+.title{
+    font-size: var(--font-xl);
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.button{
+    margin-right: 10px;
+    padding: .5rem .75rem;
+}
+
+.error{
+    font-size: var(--font-lg);
+    color: red;
+    margin-left: 9px;
+}

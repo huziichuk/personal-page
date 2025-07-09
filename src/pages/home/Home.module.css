@@ -58,3 +58,10 @@
         margin: 0 10px;
     }
 }
+
+@media (max-width: 500px) {
+    .img_container{
+        width: 300px;
+        height: 300px;
+    }
+}

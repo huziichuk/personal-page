@@ -28,3 +28,10 @@
     display: flex;
     gap: 2rem;
 }
+
+@media (max-width: 600px) {
+    .contact_list {
+        flex-direction: column;
+        border: none;
+    }
+}

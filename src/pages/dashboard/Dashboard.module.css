@@ -1,0 +1,28 @@
+.wrapper{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.title{
+    font-size: var(--font-2xl);
+}
+
+.title_block{
+    display: flex;
+    align-items: center;
+}
+
+.title_block__button{
+    display: flex;
+    margin-left: 10px;
+    transition: 0.2s ease transform;
+}
+
+.title_block__button.active{
+    transform: rotate(45deg);
+}
+
+.title_img{
+    width: 32px;
+    height: 32px;
+}

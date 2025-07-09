@@ -1,0 +1,41 @@
+.wrapper {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--bg-color-invert);
+}
+
+.title {
+    font-size: var(--font-lg);
+}
+
+.content {
+    font-size: var(--font-md);
+}
+
+.field {
+    margin-top: 20px;
+}
+
+.field__input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0%);
+}
+
+.select {
+    width: 200px;
+}
+
+.field__input:focus {
+    border: 1px solid var(--bg-color-invert);
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+.button {
+    margin-right: 10px;
+    padding: .5rem .75rem;
+}

@@ -1,0 +1,48 @@
+.wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    border: 1px solid var(--bg-color-invert);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.title{
+    font-size: var(--font-2xl);
+    font-weight: var(--font-weight-bold);
+    user-select: none;
+}
+
+.input{
+    font-size: var(--font-md);
+    border-bottom: 1px solid var(--bg-color-invert);
+    color: var(--color-text-primary);
+}
+
+.input:nth-child(3){
+    margin-top: 10px;
+}
+
+.checkbox{
+    appearance: auto;
+    margin-right: .3rem;
+}
+
+.label{
+    user-select: none;
+}
+
+.button{
+    width: 70%;
+}
+
+.error{
+    color: red;
+}

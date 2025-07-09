@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.title{
+    margin-left: 9px;
+    font-size: var(--font-lg);
+}
+
+.input{
+    border: 1px solid var(--bg-color-invert);
+    font-size: var(--font-md);
+    border-radius: 20px;
+    padding: 3px 7px;
+    margin-top: 5px;
+}

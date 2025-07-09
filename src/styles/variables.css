@@ -24,6 +24,12 @@
     --font-weight-regular: 400;
     --font-weight-bold: 600;
     --font-weight-extra-bold: 700;
+
+    --base-level-intent: 20px;
+    --level-intent-1: var(--base-level-intent);
+    --level-intent-2: calc(var(--base-level-intent) * 2);
+    --level-intent-3: calc(var(--base-level-intent) * 3);
+    --level-intent-4: calc(var(--base-level-intent) * 4);
 }
 
 [data-theme="dark"] {
