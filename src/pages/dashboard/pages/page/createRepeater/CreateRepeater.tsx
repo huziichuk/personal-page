@@ -16,12 +16,13 @@ type Props = {
 const CreateRepeater: React.FC<Props> = ({pageId, addNewRepeater, close}) => {
 
     const [key, setKey] = useState("");
+    const [title, setTitle] = useState("");
 
     const [error, setError] = useState("");
 
     const createButtonHandler = () => {
         setError("")
-        const result = repeaterSchema.safeParse({key, pageId});
+        const result = repeaterSchema.safeParse({key, pageId, title});
 
         if (!result.success) {
             const firstError = result.error.errors[0]?.message;
@@ -33,6 +34,7 @@ const CreateRepeater: React.FC<Props> = ({pageId, addNewRepeater, close}) => {
             addNewRepeater({
                 key,
                 page_id:pageId,
+                title,
                 id:res.data.id
             })
 
@@ -50,6 +52,7 @@ const CreateRepeater: React.FC<Props> = ({pageId, addNewRepeater, close}) => {
         <p className={styles.title}>Create repeater</p>
         {error && <p className={styles.error}>{error}</p>}
         <div className={styles.inputs_wrapper}>
+            <CustomInput onChange={setTitle} required={true} title={"Title"} value={title}/>
             <CustomInput onChange={setKey} required={true} title={"Key"} value={key}/>
         </div>
         <div className={styles.buttons}>

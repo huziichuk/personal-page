@@ -33,7 +33,7 @@ export type RepeaterType = {
     id: number,
     key: string,
     page_id: number,
-    fields: RepeaterFieldType[],
+    fields?: RepeaterFieldType[],
 }
 
 
@@ -43,7 +43,7 @@ export type PageWithFieldsType = PageType & {
 };
 
 export type CreateApiType = {
-    id: string,
+    id: number,
     message: string,
 }
 

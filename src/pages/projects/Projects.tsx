@@ -1,6 +1,8 @@
 import React from "react";
 import styles from './Projects.module.css'
 import Button from "../../components/button/Button.tsx";
+import {usePageWithFields} from "../../hooks/usePageWithFields.ts";
+import Loading from "../loading/Loading.tsx";
 
 type ProjectProps = {
     title: string;
@@ -10,6 +12,7 @@ type ProjectProps = {
 }
 
 const Project: React.FC<ProjectProps> = ({title,description,githubLink,liveLink}) => {
+
     return(
         <div className={styles.item}>
             <p className={styles.item__title}>{title}</p>
@@ -31,18 +34,22 @@ const Project: React.FC<ProjectProps> = ({title,description,githubLink,liveLink}
 }
 
 const Projects: React.FC = () => {
+
+    const { page, getRepeaterFieldsValue } = usePageWithFields("projects");
+
+    if (!page) {
+        return <Loading />;
+    }
+
     return (
         <div className={styles.wrapper}>
             <p className={styles.p}>Browse My Recent</p>
             <p className={styles.title}>Projects</p>
             <div className={styles.container}>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0lorem1fdsfdsfsdfsdfds0lorem1fdsfdsfsdfsdfds0lorem1fdsfdsfsdfsdfds0lorem1fdsfdsfsdfsdfds0lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} githubLink={"fdsfsdf"}/>
-                <Project description={"lorem1fdsfdsfsdfsdfds0"} title={"Project One"} liveLink={"fdsf"} githubLink={"fdsfsdf"}/>
+                {getRepeaterFieldsValue("projects")?.map((project, i) => {
+                    const projectJson:ProjectProps = JSON.parse(project);
+                    return <Project liveLink={projectJson.liveLink} githubLink={projectJson?.githubLink} key={i} title={projectJson.title} description={projectJson.description} />
+                })}
             </div>
         </div>
     )

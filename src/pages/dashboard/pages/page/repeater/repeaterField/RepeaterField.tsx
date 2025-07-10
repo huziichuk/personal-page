@@ -79,7 +79,7 @@ const RepeaterField:React.FC<Props> = ({repeaterField}) => {
             <CustomInput onChange={titleChangeHandler} title={"Title"} value={title}/>
             <CustomInput onChange={fieldKeyChangeHandler} title={"Field key"} value={fieldKey}/>
             <CustomInput type={"select"} onChange={typeChangeHandler as (text: string) => void} title={"Type"} value={type} select={typeSelectArray}/>
-            <CustomInput onChange={valueChangeHandler} title={"Value"} value={value}/>
+            <CustomInput type={"textarea"} onChange={valueChangeHandler} title={"Value"} value={value}/>
         </div>
         {isChanged && <div className={styles.buttons}>
             <Button onClick={updateButtonHandler} className={styles.button} variant="primary">
