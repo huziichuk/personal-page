@@ -1,6 +1,6 @@
 import styles from "./CreateRepeaterField.module.css"
 import React, {useState} from "react";
-import {RepeaterFieldType, typeSelectArray, TypesEnum} from "../../../../../../types/types.ts";
+import {typeSelectArray, TypesEnum} from "../../../../../../types/types.ts";
 import CustomInput from "../../../../../../components/customInput/CustomInput.tsx";
 import Button from "../../../../../../components/button/Button.tsx";
 import {apiCreateRepeaterField} from "../../../../../../api/dashboard.ts";
@@ -10,7 +10,14 @@ import {repeaterFieldSchema} from "../../../../../../schemas/repeaterFieldSchema
 type Props = {
     close: () => void;
     repeaterId: number;
-    addNewRepeaterField: (repeaterField: RepeaterFieldType) => void;
+    addNewRepeaterField: (repeaterField: {
+        id: number;
+        key: string;
+        repeater_id: number;
+        title: string;
+        type: TypesEnum.string;
+        value: string
+    }) => void;
 }
 
 const CreateRepeaterField:React.FC<Props> = ({close,repeaterId, addNewRepeaterField}) => {
@@ -35,7 +42,7 @@ const CreateRepeaterField:React.FC<Props> = ({close,repeaterId, addNewRepeaterFi
         apiCreateRepeaterField(result.data).then((res) => {
             addNewRepeaterField({
                 title,
-                field_key:fieldKey,
+                key:fieldKey,
                 value,
                 type:TypesEnum.string,
                 id:res.data.id,

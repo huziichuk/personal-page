@@ -7,16 +7,28 @@ import Contact from "./pages/contact/Contact.tsx";
 import Skills from "./pages/skills/Skills.tsx";
 import About from "./pages/about/About.tsx";
 import Projects from "./pages/projects/Projects.tsx";
-import {lazy, Suspense} from "react";
+import {lazy, Suspense, useEffect} from "react";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute.tsx";
 import Loading from "./pages/loading/Loading.tsx";
 import {AuthProvider} from "./context/AuthContext.tsx";
+import {useDispatch} from "react-redux";
+import {preloadPagesBySlugs} from "./store/preloadThunk.ts";
+import {AppDispatch} from "./store/store.ts";
 
 const AdminLayout = lazy(() => import("./layouts/adminLayout/AdminLayout"));
 const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"))
 const Login = lazy(() => import("./pages/login/Login"));
 
+const slugsToPreload = ["home"];
+
 function App() {
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    useEffect(() => {
+        dispatch(preloadPagesBySlugs(slugsToPreload));
+    }, [dispatch]);
+
     return (
         <>
             <Router>

@@ -64,7 +64,7 @@ const CreateField: React.FC<Props> = ({close, pageId, addNewField}) => {
                 <CustomInput onChange={setTitle} required={true} title={"Title"} value={title}/>
                 <CustomInput onChange={setFieldKey} required={true} title={"Field Key"} value={fieldKey}/>
                 <CustomInput type={"select"} onChange={setType} title={"Type"} value={type} select={typeSelectArray}/>
-                <CustomInput onChange={setValue} required={true} title={"Value"} value={value}/>
+                <CustomInput type={"textarea"} onChange={setValue} required={true} title={"Value"} value={value}/>
             </div>
             <div className={styles.buttons}>
                 <Button onClick={createButtonHandler} className={styles.button} variant="primary">

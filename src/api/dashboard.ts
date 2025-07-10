@@ -40,14 +40,39 @@ export const apiUpdateField = ({
 
 export const apiCreateRepeater = ({
                                       key,
+                                      title,
                                       pageId
                                   }: RepeaterFormData) => api.post<CreateApiType>(`/repeaters`, {
     repeater_key: key,
+    title,
     page_id: pageId
 });
 
-export const apiUpdateRepeater = ({id, key}:RepeaterFormData) => api.put(`/repeaters/${id}`, {repeater_key:key})
+export const apiUpdateRepeater = ({id, key}: RepeaterFormData) => api.put(`/repeaters/${id}`, {repeater_key: key})
 
-export const apiCreateRepeaterField = ({key, repeaterId, type, value, title}:RepeaterFieldFormData) => api.post<CreateApiType>(`/repeaterFields`, {value, type, field_key:key, repeater_id:repeaterId, title})
+export const apiCreateRepeaterField = ({
+                                           key,
+                                           repeaterId,
+                                           type,
+                                           value,
+                                           title
+                                       }: RepeaterFieldFormData) => api.post<CreateApiType>(`/repeaterFields`, {
+    value,
+    type,
+    field_key: key,
+    repeater_id: repeaterId,
+    title
+})
 
-export const apiUpdateRepeaterField = ({id, key, type, title, value}:RepeaterFieldFormData) =>  api.put(`/repeaterFields/${id}`, {field_key:key, type, title, value})
+export const apiUpdateRepeaterField = ({
+                                           id,
+                                           key,
+                                           type,
+                                           title,
+                                           value
+                                       }: RepeaterFieldFormData) => api.put(`/repeaterFields/${id}`, {
+    field_key: key,
+    type,
+    title,
+    value
+})
