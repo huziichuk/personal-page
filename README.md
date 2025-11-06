@@ -1,5 +1,5 @@
-# Personal Portfolio Website
-
+# [Personal Portfolio Website](https://nazarhuziichuk.com)
+## Link: [https://nazarhuziichuk.com](https://nazarhuziichuk.com)
 A modern, responsive personal portfolio website built with **React**, **TypeScript**, and **Redux Toolkit**.  
 This project allows dynamic page content, supports dark/light themes, and is structured with reusable UI components and modular CSS.
 
